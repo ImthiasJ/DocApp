@@ -1,1 +1,26 @@
-<p>bookingappointment works!</p>
+<form>
+  <div class="form-control">
+    <label for="DoctorName">Doctor Name</label>
+    <input class="form-control" type="text" id="DoctorName" name="DoctorName"placeholder="Enter Docter name" [(ngModel)]="DoctorName">
+  </div>
+  <div class="form-control">
+    <label for="appTime">Appointment Time</label>
+    <input class="form-control" type="time" id="appTime" name="appTime" placeholder="Appointment Time" [(ngModel)]="appTime">
+  </div>
+  <div class="row text-center my-1">
+    <div class="col">
+      <button type="submit" class="mx-1 btn btn-primary"(click)="cnfmappt()"> Book Appointment</button>
+      <button type="submit" class="mx-1 btn btn-primary"(click)="showbooking()"> Show your existing Appointments</button>
+    </div>
+  </div>
+
+
+  <table class="my-3 table table-bordered" [hidden]="!showmybooking">
+    <tr><td>Doctor Name</td><td>Appointment Time</td></tr>
+    <tr *ngFor = "let row of myBooking">
+    <td *ngFor = "let column of headers">
+      {{row[column]}}
+    </td>
+    </tr>
+  </table>
+</form>
