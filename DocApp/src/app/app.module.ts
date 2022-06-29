@@ -10,12 +10,14 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { BookingappointmentComponent } from './bookingappointment/bookingappointment.component';
 import { ValidatebookingComponent } from './validatebooking/validatebooking.component';
+import { DoctorComponent } from './doctor/doctor.component';
 const routes: Routes = [
   { path:'login', component:LoginComponent},
   { path: 'home', component:HomeComponent },
   { path: 'booking', component:BookingappointmentComponent },
   { path: 'vbookin', component:ValidatebookingComponent },
-  { path: 'signup', component:SignupComponent }
+  { path: 'signup', component:SignupComponent },
+  { path: 'showDoc', component:DoctorComponent }
 ];
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ const routes: Routes = [
     LoginComponent,
     SignupComponent,
     BookingappointmentComponent,
-    ValidatebookingComponent
+    ValidatebookingComponent,
+    DoctorComponent
   ],
   imports: [
     BrowserModule,RouterModule,FormsModule,RouterModule.forRoot(routes)

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-bookingappointment',
   templateUrl: './bookingappointment.component.html',
@@ -13,7 +14,7 @@ showmybooking:boolean=false;
 headers=["doctorname","time"];
 myBooking: any[] = [];
 
-  constructor(private appC:AppComponent) { }
+  constructor(private appC:AppComponent,private router:Router) { }
 //appDetails=[{'username':'admin','doctorname':'admin','time':"15:01"}];
   ngOnInit(): void {
   this.myBooking=[];
@@ -47,7 +48,7 @@ myBooking: any[] = [];
 
   }
   showbooking()
-  {
+  {this.myBooking=[];
   for(let c in this.appC.appDetails)
     {
     if(this.appC.appDetails[c].username==this.appC.loginUser)
@@ -63,6 +64,11 @@ myBooking: any[] = [];
     }
     console.log(this.myBooking);
 
+  }
+
+  showDoctor()
+  {
+  this.router.navigate(['/showDoc']);
   }
 
 }
