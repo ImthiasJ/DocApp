@@ -9,12 +9,13 @@ export class AppComponent {
   title = 'DocApp';
   loginUser:string ="";
   userdetails=[{'name':'admin','username':'admin','password':'123'}];
-  appDetails=[{'username':'admin','doctorname':'admin','time':"15:01"}];
+  appDetails=[{'username':'admin','doctorname':'Abdul','time':"15:01"}];
+
   constructor(private router:Router)
   {
  this.router.navigate(['/home']);
   }
   goHome()
-  {this.router.navigate(['/home']);
+  {this.router.navigate(['/login']);
   }
 }

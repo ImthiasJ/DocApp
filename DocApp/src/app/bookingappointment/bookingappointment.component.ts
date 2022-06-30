@@ -13,17 +13,27 @@ busy : boolean=false;
 showmybooking:boolean=false;
 headers=["doctorname","time"];
 myBooking: any[] = [];
-
+  DocList:any=[{'name':'Abdul','address':'Erode','Spec':'ENT'},
+              {'name':'Eliza','address':'Erode','Spec':'Child Specialist'},
+            {'name':'Samad','address':'Erode','Spec':'Pediatrics'},
+            {'name':'Chandran','address':'Erode','Spec':'Dermatology'}];
   constructor(private appC:AppComponent,private router:Router) { }
 //appDetails=[{'username':'admin','doctorname':'admin','time':"15:01"}];
   ngOnInit(): void {
-  this.myBooking=[];
+
   }
-  cnfmappt()
+   cnfmappt()
   {
-  console.log(this.DoctorName);
-  console.log(this.appTime);
-  console.log(this.appC.loginUser);
+  if(this.DoctorName=="")
+  {
+  alert("Please Select the Doctor Name");
+  }
+  if(this.appTime=="")
+  {
+  alert("Please select the time");
+  return;
+  }
+
   for(let c in this.appC.appDetails)
   {
     if(this.appC.appDetails[c].doctorname==this.DoctorName)

@@ -1,7 +1,10 @@
 <form>
   <div class="form-control">
     <label for="DoctorName">Doctor Name</label>
-    <input class="form-control" type="text" id="DoctorName" name="DoctorName"placeholder="Enter Docter name" [(ngModel)]="DoctorName">
+<!--    <input class="form-control" type="text" id="DoctorName" name="DoctorName"placeholder="Enter Docter name" [(ngModel)]="DoctorName">-->
+    <select class="form-select" name="DoctorName" id="DoctorName" [(ngModel)]="DoctorName">
+      <option *ngFor="let n of DocList" [value]="n.name" >{{n.name}}</option>
+    </select>
   </div>
   <div class="form-control">
     <label for="appTime">Appointment Time</label>
